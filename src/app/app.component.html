@@ -2,10 +2,12 @@
   <thead>
   <tr>
     <th>ID</th>
-    <th appSorting [data]="employees" [field]="'name'" > Name
-      <i class="bi bi-arrow-down" ></i>
+    <th appSorting [data]="employees" [field]="'name'" (sortDirectionChange)="sortDirectionChanged('name', $event)"> Name
+      <i *ngIf="sortingField === 'name'" [class]="sortingDirection === 'asc' ? 'bi bi-arrow-up' : 'bi bi-arrow-down'"></i>
     </th>
-    <th appSorting  [data]="employees" [field]="'age'">Age</th>
+    <th appSorting [data]="employees" [field]="'age'" (sortDirectionChange)="sortDirectionChanged('age', $event)">Age
+      <i *ngIf="sortingField === 'age'" [class]="sortingDirection === 'asc' ? 'bi bi-arrow-up' : 'bi bi-arrow-down'"></i>
+    </th>
     <th>Phone</th>
     <th>Address</th>
   </tr>
@@ -21,13 +23,6 @@
   </tr>
   </tbody>
 
-<!--  <tr   appHighlight [age]="employees[0].age"  >-->
-<!--    <td>{{ employees[0].name }}</td>-->
-<!--    <td>{{ employees[0].id }}</td>-->
-<!--    <td>{{ employees[0].age }}</td>-->
-<!--    <td>{{ employees[0].phone }}</td>-->
-<!--    <td>{{ employees[0].address }}</td>-->
-<!--  </tr>-->
 </table>
 
 

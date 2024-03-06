@@ -7,6 +7,7 @@ import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output
 export class AppSortingDirective implements OnInit{
   @Input() data: any[] = [];
   @Input() field:string ="";
+  @Output() sortDirectionChange: EventEmitter<string> = new EventEmitter<string>();
   clicked:boolean=false;
 
   constructor(private elementRef: ElementRef) {
@@ -45,6 +46,7 @@ export class AppSortingDirective implements OnInit{
 
         }
       this.clicked=!this.clicked;
+    this.sortDirectionChange.emit(this.clicked ? 'desc' : 'asc');
   }
   ngOnInit() {
 

@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {AppHighlightDirective} from "./app-highlight.directive";
+import {AppSortingDirective} from "./Sorting.directive";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppHighlightDirective,
+    AppSortingDirective
   ],
   imports: [
     BrowserModule,

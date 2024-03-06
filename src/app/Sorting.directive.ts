@@ -48,6 +48,7 @@ export class AppSortingDirective implements OnInit{
       this.clicked=!this.clicked;
     this.sortDirectionChange.emit(this.clicked ? 'desc' : 'asc');
   }
+  //
   ngOnInit() {
 
   }

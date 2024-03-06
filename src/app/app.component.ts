@@ -39,6 +39,6 @@ export class AppComponent {
     this.sortingField = field;
     this.sortingDirection = direction;
   }
-
+//
 }
 

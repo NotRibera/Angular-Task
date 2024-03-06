@@ -52,5 +52,5 @@ export class AppSortingDirective implements OnInit{
   ngOnInit() {
 
   }
-//
+
 }

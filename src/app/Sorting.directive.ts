@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
+import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer2} from "@angular/core";
 
 @Directive({
   selector:'[appSorting]'
@@ -7,13 +7,22 @@ import {Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output
 export class AppSortingDirective implements OnInit{
   @Input() data: any[] = [];
   @Input() field:string ="";
-  @Output() sortDirectionChange: EventEmitter<string> = new EventEmitter<string>();
-  clicked:boolean=false;
 
-  constructor(private elementRef: ElementRef) {
+  clicked:boolean=false;
+  element: ElementRef;
+  renderer:Renderer2;
+
+  constructor(private elementRef: ElementRef,renderer:Renderer2) {
+     this.element=elementRef;
+    const div = renderer.createElement('i');
+    renderer.appendChild(this.element.nativeElement,div);
+    this.renderer=renderer;
   }
 
   @HostListener('click', ['$event']) onClick($event: string){
+    let child=this.element.nativeElement.children[0];
+  console.log(child)
+
         if (!this.clicked)
         {
           if (typeof(this.data[0][this.field])=='string')
@@ -28,7 +37,7 @@ export class AppSortingDirective implements OnInit{
               return a[this.field] - b[this.field];
             });
           }
-          // console.log(this.data);
+          this.renderer.setAttribute(child,"class","bi bi-arrow-up");
         }
         else {
           if (typeof(this.data[0][this.field])=='string'){
@@ -43,14 +52,11 @@ export class AppSortingDirective implements OnInit{
               return a[this.field] - b[this.field];
             }).reverse();
           }
-
+          this.renderer.setAttribute(child,"class","bi bi-arrow-down");
         }
       this.clicked=!this.clicked;
-    this.sortDirectionChange.emit(this.clicked ? 'desc' : 'asc');
-  }
-
-  ngOnInit() {
 
   }
 
+  ngOnInit() {}
 }

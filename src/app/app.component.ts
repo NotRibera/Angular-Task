@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,6 +10,14 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class AppComponent {
-  title = 'emp';
+  title = 'home';
+
+  constructor(private router: Router) {}
+
+  navigateToEmp() {
+    this.router.navigate(['/emp']);
+    console.log("1");
+  }
+  
 }
 

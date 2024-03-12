@@ -8,8 +8,6 @@ import { InfoService } from '../Info service/info.service';
   styleUrl: './emp.component.css'
 })
 export class EmpComponent {
-  sortingField: string = '';
-  sortingDirection: string = '';
   employees:any = [];
 
   constructor(service:  InfoService) {

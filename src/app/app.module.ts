@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AppHighlightDirective} from "./app-highlight.directive";
 import { AppSortingDirective} from "./Sorting.directive";
 import { EmpComponent } from './emp/emp.component';
+import { RouterModule, Route } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { EmpComponent } from './emp/emp.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule
   ],
   providers: [],

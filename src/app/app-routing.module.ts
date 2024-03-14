@@ -4,7 +4,6 @@ import { EmpComponent } from './emp/emp.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: 'home', component:AppComponent},
   { path: 'emp', component: EmpComponent },
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

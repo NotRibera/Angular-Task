@@ -2,28 +2,20 @@
     <thead>
     <tr>
       <th>ID</th>
-      <th appSorting [data]="employees" [field]="'name'" > Name
-      </th>
-      <th appSorting [data]="employees" [field]="'age'" >Age
-      </th>
+      <th appSorting [data]="employees" [field]="'name'" > Name </th>
+      <th appSorting [data]="employees" [field]="'age'" >Age </th>
       <th>Phone</th>
       <th>Address</th>
     </tr>
     </thead>
 
     <tbody >
-    <tr appHighlight *ngFor="let emp of employees; index as i" [age]="emp.age" >
-      <td>{{ emp.id }}</td>
-      <td>{{ emp.name}}</td>
-      <td>{{ emp.age }}</td>
-      <td>{{ emp.phone }}</td>
-      <td>{{ emp.address }}</td>
+    <tr  id="customId" *ngFor="let emp of employees; index as i" >
+      <td appHighlight  [age]="emp.age">{{ emp.id }}</td>
+      <td appHighlight  [age]="emp.age">{{ emp.name}}</td>
+      <td appHighlight  [age]="emp.age">{{ emp.age }}</td>
+      <td appHighlight  [age]="emp.age">{{ emp.phone }}</td>
+      <td appHighlight  [age]="emp.age">{{ emp.address }}</td>
     </tr>
     </tbody>
   </table>
-
-
-
-
-
-

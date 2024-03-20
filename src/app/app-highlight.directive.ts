@@ -6,7 +6,6 @@ import {Directive, ElementRef, HostListener, Input, OnInit} from "@angular/core"
 
 export class AppHighlightDirective implements OnInit{
   @Input() age!: number ;
-  @Input('appAddId') id: string = ''; 
 
   constructor(private elementRef: ElementRef) {
 
@@ -20,10 +19,4 @@ export class AppHighlightDirective implements OnInit{
       this.elementRef.nativeElement.style.background = 'yellow';
     }
   }
-
-  //  ngOnInit(): void {
-  //   if (this.id) {
-  //     this.elementRef.nativeElement.setAttribute('id', this.id); // Set the ID attribute
-  //   }
-  // }
 }

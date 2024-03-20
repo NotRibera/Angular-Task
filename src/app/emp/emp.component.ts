@@ -8,15 +8,26 @@ import { InfoService } from '../Info service/info.service';
   styleUrl: './emp.component.css'
 })
 export class EmpComponent {
-  employees:any = [];
+  employees:any[] = [];
 
-  constructor(service:  InfoService) {
-    this.employees=service.getEmployees()
-    this.employees.forEach((employee: { age: number; }) => {
-      employee.age = service.getNumber(employee.age);
-    });
+  // constructor(service:  InfoService) {
+  //   this.employees=service.getEmployees()
+  //   this.employees.forEach((employee: { age: number; }) => {
+  //     employee.age = service.getNumber(employee.age);
+  //   });
+  // }
+  
+  constructor(private employeeService: InfoService) {
+    console.log("in constructor");
   }
 
-
-
+  ngOnInit() {
+    console.log("in init");
+    this.employeeService.employeesSubject.subscribe((value)=>{
+      console.log(value);
+      this.employees=value;
+    });
+    this.employeeService.getEmp();
+   
+  }
 }

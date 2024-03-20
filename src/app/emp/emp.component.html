@@ -10,7 +10,7 @@
     </thead>
 
     <tbody >
-    <tr  id="customId" *ngFor="let emp of employees; index as i" >
+    <tr *ngFor="let emp of employees" >
       <td appHighlight  [age]="emp.age">{{ emp.id }}</td>
       <td appHighlight  [age]="emp.age">{{ emp.name}}</td>
       <td appHighlight  [age]="emp.age">{{ emp.age }}</td>

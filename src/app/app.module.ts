@@ -7,6 +7,7 @@ import { AppHighlightDirective} from "./app-highlight.directive";
 import { AppSortingDirective} from "./Sorting.directive";
 import { EmpComponent } from './emp/emp.component';
 import { RouterModule, Route } from '@angular/router';
+import { PageErrorComponent } from './page-error/page-error.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RouterModule, Route } from '@angular/router';
     AppComponent,
     AppHighlightDirective,
     AppSortingDirective,
-    EmpComponent
+    EmpComponent,
+    PageErrorComponent
   ],
   imports: [
     BrowserModule,

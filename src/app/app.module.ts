@@ -8,6 +8,8 @@ import { AppSortingDirective} from "./Sorting.directive";
 import { EmpComponent } from './emp/emp.component';
 import { RouterModule, Route } from '@angular/router';
 import { PageErrorComponent } from './page-error/page-error.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { PageErrorComponent } from './page-error/page-error.component';
     AppHighlightDirective,
     AppSortingDirective,
     EmpComponent,
-    PageErrorComponent
+    PageErrorComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

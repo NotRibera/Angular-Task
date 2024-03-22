@@ -1,3 +1,9 @@
+<div class="container">
+  <input type="text" placeholder="Search by name" [(ngModel)]='filterText' >
+</div>
+
+<hr>
+
 <table class="table">
     <thead>
     <tr>
@@ -10,7 +16,7 @@
     </thead>
 
     <tbody >
-    <tr *ngFor="let emp of employees" >
+    <tr *ngFor="let emp of employees | filterEmp:filterText "  >
       <td appHighlight  [age]="emp.age">{{ emp.id }}</td>
       <td appHighlight  [age]="emp.age">{{ emp.name}}</td>
       <td appHighlight  [age]="emp.age">{{ emp.age }}</td>

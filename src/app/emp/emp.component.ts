@@ -10,6 +10,8 @@ import { InfoService } from '../Info service/info.service';
 export class EmpComponent {
   employees:any[] = [];
 
+  filterText:string ='';
+
   // constructor(service:  InfoService) {
   //   this.employees=service.getEmployees()
   //   this.employees.forEach((employee: { age: number; }) => {

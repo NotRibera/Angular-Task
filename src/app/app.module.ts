@@ -19,7 +19,7 @@ import { FilterPipe } from './filter.pipe';
     AppSortingDirective,
     EmpComponent,
     PageErrorComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

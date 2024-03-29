@@ -1,27 +1,28 @@
-<div class="container">
-  <input type="text" placeholder="Search by name" [(ngModel)]='filterText' >
-</div>
+<input type="text" placeholder="Search by name" [(ngModel)]='filterText'>
 
 <hr>
 
 <table class="table">
-    <thead>
+  <thead>
     <tr>
       <th>ID</th>
-      <th appSorting [data]="employees" [field]="'name'" > Name </th>
-      <th appSorting [data]="employees" [field]="'age'" >Age </th>
+      <th appSorting [data]="employees" [field]="'name'"> Name </th>
+      <th appSorting [data]="employees" [field]="'age'">Age </th>
       <th>Phone</th>
       <th>Address</th>
     </tr>
-    </thead>
+  </thead>
 
-    <tbody >
-    <tr *ngFor="let emp of employees | filterEmp:filterText "  >
-      <td appHighlight  [age]="emp.age">{{ emp.id }}</td>
-      <td appHighlight  [age]="emp.age">{{ emp.name}}</td>
-      <td appHighlight  [age]="emp.age">{{ emp.age }}</td>
-      <td appHighlight  [age]="emp.age">{{ emp.phone }}</td>
-      <td appHighlight  [age]="emp.age">{{ emp.address }}</td>
+  <tbody>
+    <tr *ngFor="let emp of employees | filterEmp:filterText | async">
+      <!-- <tr *ngFor="let emp of employees | filterEmp|async "> -->
+      <td appHighlight [age]="emp.age">{{ emp.id }}</td>
+      <td appHighlight [age]="emp.age">{{ emp.name}}</td>
+      <td appHighlight [age]="emp.age">{{ emp.age }}</td>
+      <td appHighlight [age]="emp.age">{{ emp.phone }}</td>
+      <td appHighlight [age]="emp.age">{{ emp.address }}</td>
     </tr>
-    </tbody>
-  </table>
+  </tbody>
+</table>
+
+<!-- <app-pagination [totalItems]="employees.length" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage" (onclick)="changePage($event)"></app-pagination> -->

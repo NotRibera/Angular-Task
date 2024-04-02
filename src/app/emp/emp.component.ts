@@ -8,7 +8,6 @@ import { InfoService } from '../Info service/info.service';
 })
 export class EmpComponent {
   employees:any[] = [];
-
   filterText:string ='';
   
   constructor(private employeeService: InfoService) {
@@ -21,4 +20,6 @@ export class EmpComponent {
     });
     this.employeeService.getEmp();
   }
+
+  p = 1;
 }

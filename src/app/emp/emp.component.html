@@ -14,7 +14,10 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let emp of employees | filterEmp:filterText | async">
+    
+    <tr *ngFor="let emp of employees | paginate: {itemsPerPage:10 , currentPage: p} | filterEmp:filterText | async ">
+    <!-- <tr *ngFor="let emp of employees | async | filterEmp:searchText "> -->
+
       <!-- <tr *ngFor="let emp of employees | filterEmp|async "> -->
       <td appHighlight [age]="emp.age">{{ emp.id }}</td>
       <td appHighlight [age]="emp.age">{{ emp.name}}</td>
@@ -25,4 +28,4 @@
   </tbody>
 </table>
 
-<!-- <app-pagination [totalItems]="employees.length" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage" (onclick)="changePage($event)"></app-pagination> -->
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

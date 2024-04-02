@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppHighlightDirective} from "./app-highlight.directive";
-import { AppSortingDirective} from "./Sorting.directive";
+import { AppHighlightDirective} from "./Directive & pipe/app-highlight.directive";
+import { AppSortingDirective} from "./Directive & pipe/Sorting.directive";
 import { EmpComponent } from './emp/emp.component';
 import { RouterModule, Route } from '@angular/router';
 import { PageErrorComponent } from './page-error/page-error.component';
 import { FormsModule } from '@angular/forms';
-import { FilterPipe } from './filter.pipe';
+import { FilterPipe } from './Directive & pipe/filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FilterPipe } from './filter.pipe';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,8 @@
-/* .orange {
-    background-color: orange !important;
-  }
-.yellow {
-    background-color: yellow !important;
-  }
- */
-#customId{
-  background-color: aquamarine;
-}
-
 .container{
   margin-left: 1500px;
+}
+
+.search{
+  margin-top: 10px;
+  align-items: center;
 }

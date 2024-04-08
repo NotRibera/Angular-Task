@@ -12,12 +12,9 @@
       <th>Address</th>
     </tr>
   </thead>
-
   <tbody>
-    
-    <tr *ngFor="let emp of employees | paginate: {itemsPerPage:10 , currentPage: p} | filterEmp:filterText | async ">
-    <!-- <tr *ngFor="let emp of employees | async | filterEmp:searchText "> -->
-
+      <tr *ngFor="let emp of employees | paginate: {itemsPerPage:10 , currentPage: p} | filterEmp:filterText | async ">
+      <!-- <tr *ngFor="let emp of employees | async | filterEmp:searchText "> -->
       <td appHighlight [age]="emp.age">{{ emp.id }}</td>
       <td appHighlight [age]="emp.age">{{ emp.name}}</td>
       <td appHighlight [age]="emp.age">{{ emp.age }}</td>

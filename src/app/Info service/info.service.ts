@@ -70,7 +70,7 @@ import {Subject } from 'rxjs';
     { name: 'Luna', id: 59, age: 26, phone: '1098765432', address: 'AKJSHDFKA' },
     { name: 'Aiden', id: 60, age: 29, phone: '0987654321', address: 'AKJSHDFKA' },
     { name: 'Carter', id: 61, age: 32, phone: '9876543210', address: 'AKJSHDFKA' },
-    { name: 'Ella', id: 62, age: 27, phone: '8765432109', address: 'AKJSHDFKA' },
+    { name: 'Ella', id: 62, age: 27, phone: '8765432109', address: 'AKJSHDFKA' }
   ];
 
   public employeesSubject: Subject < any >= new Subject < any > ();

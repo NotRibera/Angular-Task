@@ -1,0 +1,35 @@
+<!-- <h1>Api-emp works</h1> -->
+<input type="text" placeholder="Search by name" [(ngModel)]='filterText' class="search">
+
+<div class="container">
+    <!-- <h2>Employee Table</h2> -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact Number</th>
+          <th>Age</th>
+          <th>DOB</th>
+          <th>Salary</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | paginate: {itemsPerPage:5 , currentPage: p} | filterEmp:filterText | async  ">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.contactNumber }}</td>
+          <td>{{ employee.age }}</td>
+          <td>{{ employee.dob }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>{{ employee.address }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+  

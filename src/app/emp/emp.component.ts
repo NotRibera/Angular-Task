@@ -6,6 +6,7 @@ import { InfoService } from '../Info service/info.service';
   templateUrl: './emp.component.html',
   styleUrl: './emp.component.css'
 })
+
 export class EmpComponent {
   employees:any[] = [];
   filterText:string ='';

@@ -22,9 +22,9 @@ export class FilterPipe implements PipeTransform {
 
   filterPromise(employee:any,filterText:string){
     let timer: any;
-    console.log(' Emp ');
-    console.log(employee);
-    let filteredEmp= employee.filter((emp: { name: string; })=>emp.name.toLowerCase().includes(filterText.toLocaleLowerCase()));
+    // console.log(' Emp ');
+    // console.log(employee);
+    let filteredEmp= employee.filter((emp: { firstName: string; })=>emp.firstName.toLowerCase().includes(filterText.toLocaleLowerCase()));
     console.log('filtered Emp ');
     console.log(filteredEmp);
     return new Promise((resolve,reject)=>{
@@ -35,19 +35,4 @@ export class FilterPipe implements PipeTransform {
     });
   }
 
-// ______________________________________________________________
-
-    // transform(employee$: Observable<any[]>,searchText:string): Observable<any[]> {
-    //   return employee$.pipe(
-    //     debounceTime(300),
-    //     map(employee => {
-    //       if (!searchText){
-    //         return employee;
-    //       }
-    //       searchText = searchText.toLowerCase();
-    //       return employee.filter(item => employee.name.toLowerCase().includes(searchText)
-    //       );
-    //     })
-    //   );
-    // }
 }

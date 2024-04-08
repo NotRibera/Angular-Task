@@ -11,6 +11,8 @@ import { PageErrorComponent } from './page-error/page-error.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './Directive & pipe/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ApiEmpComponent } from './api-emp/api-emp.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EmpComponent,
     PageErrorComponent,
     FilterPipe,
+    ApiEmpComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
